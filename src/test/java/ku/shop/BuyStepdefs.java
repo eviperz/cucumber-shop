@@ -1,3 +1,4 @@
+// Jirapa Wongsuwon 6410450761
 package ku.shop;
 
 import io.cucumber.java.en.Given;
@@ -31,6 +32,11 @@ public class BuyStepdefs {
     @Then("total should be {float}")
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
+    }
+
+    @Then("total in stock {string} quantity {int}")
+    public void total_in_stock_quantity(String name, int quantity) {
+        assertEquals(quantity, catalog.getProduct(name).getStock());
     }
 }
 
